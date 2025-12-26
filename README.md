@@ -1,276 +1,210 @@
-📚 Library Management System
+Library Management System
 
-Data Structures & Algorithms Assignment
+Console-Based Library Management System using Manually Implemented Linked Lists
 
-Console-Based Library Management System Using Manually Implemented Linked Lists
+A Data Structures & Algorithms course project built entirely from scratch in C++ without using STL containers.
 
-🏫 Course & Assignment Context
+📌 Course Information
 
-This project was developed as a major assignment for the Data Structures and Algorithms course in the Software Engineering program at
-Addis Ababa Science and Technology University (AASTU).
+Course: Data Structures and Algorithms
 
-Assignment Requirements
+Department: Software Engineering
 
-The assignment required students to:
+Institution: Addis Ababa Science and Technology University (AASTU)
 
-Implement core data structures from scratch
+Submission Date: December 26, 2025
 
-Avoid all STL containers (std::vector, std::list, etc.)
+🎯 Project Overview
 
-Apply fundamental algorithms manually:
+This project implements a console-based library management system that manages books and members using manually created linked lists.
 
-Searching
+The main goal is to demonstrate a strong understanding of:
 
-Sorting
+Linked lists and pointers
 
-Insertion
+Dynamic memory management
 
-Deletion
+Searching and sorting algorithms
 
-Demonstrate:
+File handling for persistent storage
 
-Proper memory management
+Object-oriented programming in C++
 
-File persistence
+All data structures and algorithms are implemented from scratch, without using STL containers such as vector, list, or map.
 
-Build a real-world application with multiple user roles
+🧠 Data Structures Used
+Books
 
-✅ This project fully satisfies all requirements while maintaining a clean, modular, and well-documented codebase.
+Doubly Linked List
 
-🎯 Project Objective
+Supports efficient insertion and deletion
 
-To design and implement a fully functional console-based library management system that efficiently manages books and members using manually created linked lists, demonstrating mastery of:
+Allows proper unlinking of nodes during deletion
 
-Pointer-based data structures
+Members
 
-Dynamic memory allocation & deallocation
+Singly Linked List
 
-File input/output operations
+Sequential access is sufficient
 
-Searching and sorting on linked data
+Lower memory overhead
 
-Object-Oriented Programming (OOP) principles in C++
+No STL containers were used in this project.
 
-🧠 Data Structures Implemented (From Scratch)
-Component	Data Structure	Reason for Choice	Key Operations
-Books	Doubly Linked List	Efficient insertion/deletion at both ends, bidirectional traversal	Add, delete (head/tail/middle), search, sort, traverse
-Members	Singly Linked List	Simple structure, lower memory usage, sequential access	Add, search, authenticate, display
+✨ Features
+Admin Panel
 
-⚠️ Important:
-No STL containers or algorithms were used. All operations rely on raw pointers and manual memory management.
-
-✨ Features Overview
-🔐 1. Admin Panel
-
-Default Credentials
+Login with default credentials
 
 Username: admin
 
 Password: admin123
 
-Admin Capabilities
+Add new books with unique ID validation
 
-Add new books (with unique ID validation)
+View all books or available books only
 
-Display:
+Search books by ID or partial name
 
-All books
+Delete books by ID
 
-Available books only
+Sort books by ID or name
 
-Search books:
+View all registered members
 
-By exact ID
+View library statistics
 
-By partial name (case-insensitive)
+Manual and automatic data saving
 
-Delete books by ID (safe unlinking in doubly linked list)
+Member Panel
 
-Sort books:
+User registration with validation
 
-By ID (ascending)
-
-By Name (alphabetical)
-
-View:
-
-Library statistics
-
-All registered members
-
-Manual save option
-
-Automatic save on logout or exit
-
-👤 2. Member Panel
-
-Registration
-
-Unique username
-
-Password with minimum length validation
-
-Member type:
-
-Student
-
-Staff
-
-Institutional ID
-
-Login
-
-Secure authentication (username + password)
-
-Member Actions
+Secure login using username and password
 
 View available books
 
 Search books by ID or name
 
-Borrow books (status changes to Borrowed)
+Borrow and return books
 
-Return books (status restored to Available)
+Automatic data saving after actions
 
-Automatic save after borrow/return
-
-👀 3. Guest / Normal User Access
+Guest Access
 
 No login required
 
 View available books
 
-Search by ID or partial name
+Search books by ID or name
 
 Read-only access
 
-💾 Data Persistence System
+💾 Data Persistence
 
-Two text files are created automatically:
+Data is stored using plain text files.
+
+Files Used
 
 books.txt
-Format:
 
-ID,Book Name,1/0
+ID,BookName,Status
 
 
-1 → Available
-
-0 → Borrowed
+Status: 1 = Available, 0 = Borrowed
 
 members.txt
-Format:
 
 username,password,type,memberId
 
-Save & Load Behavior
+Save Behavior
 
-Data loads automatically on program start
+Data is saved:
 
-Data saves occur:
+After adding or deleting books
 
-After adding/deleting books
-
-After borrowing/returning
+After borrowing or returning books
 
 After member registration
 
-On logout or program exit
+On program exit
 
-Via manual save (admin)
+Through manual save (admin)
 
 ⚙️ Algorithms Implemented
-Algorithm	Location	Description	Time Complexity
-Insertion	addBook(), addMember()	Tail insertion using head/tail pointers	O(1)
-Deletion	deleteBook()	Handles head, tail, middle, single node	O(n)
-Linear Search (ID)	findById()	Exact ID match	O(n)
-Linear Search (Name)	findByName()	Case-insensitive substring search	O(n)
-Bubble Sort	sortById(), sortByName()	Swaps adjacent node data	O(n²)
-Traversal	Display functions	Forward traversal from head	O(n)
-🛠 Compilation & Execution Guide
-Prerequisites
 
-Any modern C++ compiler
+Tail insertion in linked lists — O(1)
 
-C++11 or higher support
+Deletion (head, tail, middle) — O(n)
 
-Compilation
-# Recommended
+Linear search by ID — O(n)
+
+Linear search by name (case-insensitive) — O(n)
+
+Bubble sort by ID or name — O(n²)
+
+Traversal for display — O(n)
+
+All algorithms operate directly on custom linked lists.
+
+🛠 Compilation & Execution
+Requirements
+
+C++ compiler (C++11 or higher)
+
+Compile
 g++ -o library library.cpp -std=c++11 -Wall -Wextra
 
-# With optimization
-g++ -o library library.cpp -std=c++11 -O2
-
 Run
-./library       # Linux / macOS
-library.exe     # Windows
+./library
 
 
-The application starts with a main menu offering multiple user modes.
+Windows:
 
-📁 Project File Structure
+library.exe
+
+📁 Project Structure
 LibraryManagementSystem/
-├── library.cpp      # Complete, well-commented source code
-├── books.txt        # Auto-generated book records
-├── members.txt      # Auto-generated member records
-├── README.md        # Project documentation
-└── (Optional) screenshots/ or report.pdf
+├── library.cpp
+├── books.txt
+├── members.txt
+├── README.md
 
-⚠️ Known Limitations (Intentional)
+⚠️ Known Limitations
 
-To stay within the scope of basic DSA concepts, the following features were not implemented:
+These limitations were intentional to focus on core DSA concepts:
 
-No borrowing limit per member
+No borrowing limit
 
-No due dates, fines, or history tracking
+No due dates or fines
 
 Plain-text password storage
 
-Single hardcoded admin account
+Single admin account
 
-No advanced filters (author, genre, year)
+No advanced search filters
 
 Basic input validation only
 
-These choices allowed focus on core data structure implementation.
-
 🎓 Learning Outcomes
 
-Through this project, the following skills were strengthened:
+This project strengthened understanding of:
 
-Deep understanding of linked lists and pointers
+Linked list implementation
 
-Manual memory management in C++
+Pointer manipulation
 
-Custom implementation of searching and sorting algorithms
+Manual memory management
 
-File handling with fstream
+Searching and sorting algorithms
 
-Modular OOP design
+File handling using fstream
 
-Robust error handling
-
-Writing clean, readable, and well-documented code
+Object-oriented design in C++
 
 🏁 Conclusion
 
-This Console-Based Library Management System demonstrates strong practical application of Data Structures and Algorithms concepts.
+This project demonstrates a solid practical application of Data Structures and Algorithms using C++.
+By avoiding STL containers and implementing everything manually, it provides a clear understanding of how data structures work internally.
 
-Built entirely from scratch, it showcases:
-
-Real-world use of linked lists
-
-Correct memory and resource management
-
-Algorithm implementation without STL
-
-Persistent data storage
-
-🎯 Ideal for DSA courses emphasizing manual implementation, linked lists, file I/O, and OOP principles.
-
-Submitted: December 26, 2025
-Course: Data Structures and Algorithms
-Department: Software Engineering
-Institution: Addis Ababa Science and Technology University (AASTU)
-
-Happy coding! 📚💻✨
+It is suitable for academic submission and evaluation in DSA-focused courses.
