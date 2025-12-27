@@ -230,6 +230,37 @@ void memberMenu() {
     }
 };
 
+string line;
+        while (getline(file, line)) {
+            if (line.empty()) continue;
+
+            int comma1 = line.find(',');
+            int comma2 = line.find(',', comma1 + 1);
+            int comma3 = line.find(',', comma2 + 1);
+
+            if (comma1 != -1 && comma2 != -1 && comma3 != -1) {
+                string username = line.substr(0, comma1);
+                string password = line.substr(comma1 + 1, comma2 - comma1 - 1);
+                string memberType = line.substr(comma2 + 1, comma3 - comma2 - 1);
+                string memberId = line.substr(comma3 + 1);
+
+                if (!username.empty() && !password.empty()) {
+                    addMember(username, password, memberType, memberId);
+                }
+            }
+        }
+        file.close();
+    }
+
+    void clear() {
+        while (head != nullptr) {
+            Member* temp = head;
+            head = head->next;
+            delete temp;
+        }
+        count = 0;
+    }
+};
 // ==================== MAIN FUNCTION ====================
 int main() {
     LibrarySystem library;
