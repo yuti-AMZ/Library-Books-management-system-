@@ -207,4 +207,4 @@ Object-oriented design in C++
 This project demonstrates a solid practical application of Data Structures and Algorithms using C++.
 By avoiding STL containers and implementing everything manually, it provides a clear understanding of how data structures work internally.
 
-It is suitable for academic submission and evaluation in DSA-focused courses.
+
