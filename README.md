@@ -12,7 +12,7 @@ Department: Software Engineering
 
 Institution: Addis Ababa Science and Technology University (AASTU)
 
-Submission Date: December 26, 2025
+
 
 🎯 Project Overview
 
